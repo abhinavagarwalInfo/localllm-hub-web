@@ -53,7 +53,16 @@ cp .env.example .env
 ### 3. Run Development Server
 
 ```bash
-npm run dev
+sqlite3 data/localllm.db "DELETE FROM conversations ;"
+sqlite3 data/localllm.db "DELETE FROM messages ;"
+sqlite3 data/localllm.db "DELETE FROM document_chunks;"
+sqlite3 data/localllm.db "DELETE FROM documents;"
+sqlite3 data/localllm.db "DELETE FROM sqlite_sequence ;"
+sqlite3 data/localllm.db "DELETE FROM sessions ;"
+sqlite3 data/localllm.db "DELETE FROM activity_log;"
+
+pkill -9 node    
+./start-direct.sh
 ```
 
 Open browser: **http://localhost:5173**
