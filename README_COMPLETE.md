@@ -348,15 +348,20 @@ ls -la chat-data.db
 
 ### 9. Start Development Server
 ```bash
-# Start both frontend and backend
-npm run dev
+# Clear database
+sqlite3 data/localllm.db "DELETE FROM conversations ;"
+sqlite3 data/localllm.db "DELETE FROM messages ;"
+sqlite3 data/localllm.db "DELETE FROM document_chunks;"
+sqlite3 data/localllm.db "DELETE FROM documents;"
+sqlite3 data/localllm.db "DELETE FROM sqlite_sequence ;"
+sqlite3 data/localllm.db "DELETE FROM sessions ;"
+sqlite3 data/localllm.db "DELETE FROM activity_log;"
 
-# Or start separately:
-# Terminal 1 - Backend
-npm run server
+# Clear ports
+pkill -9 node
 
-# Terminal 2 - Frontend
-npm run client
+# Start execution
+ ./start-direct.sh
 ```
 
 The application will be available at:
