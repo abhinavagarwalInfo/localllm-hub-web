@@ -1,0 +1,53 @@
+{
+  "name": "localllm-hub-web",
+  "version": "2.0.0",
+  "description": "Multi-user web-based local LLM application with authentication",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/index.js",
+    "client": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node server/index.js"
+  },
+  "keywords": [
+    "llm",
+    "ollama",
+    "rag",
+    "web",
+    "auth"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^9.6.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.3",
+    "express-rate-limit": "^7.5.1",
+    "express-session": "^1.19.0",
+    "helmet": "^7.2.0",
+    "jsdom": "^22.1.0",
+    "lucide-react": "^0.263.1",
+    "mammoth": "^1.6.0",
+    "multer": "^1.4.5-lts.1",
+    "papaparse": "^5.4.1",
+    "pdfjs-dist": "^3.11.174",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.30.3",
+    "tesseract.js": "^5.1.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2",
+    "vite": "^5.0.0"
+  }
+}
